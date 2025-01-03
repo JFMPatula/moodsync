@@ -3,7 +3,10 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    base: '/', 
+    base: process.env.NODE_ENV === 'production' ? '/' : '/', // Adjust base URL if needed
+    build: {
+        outDir: 'public/build',  // Output to the public/build directory
+    },
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
@@ -19,11 +22,6 @@ export default defineConfig({
         }),
     ],
     server: {
-        hmr: {
-            host: 'localhost',
-        },
-        watch: {
-            usePolling: true,
-        },
+        hmr: false, // Disable HMR in production
     },
 });
