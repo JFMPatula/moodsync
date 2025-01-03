@@ -13,8 +13,8 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://your.url.from.vercel.app",
-        "APP_KEY": "add API key here from your .env file",
+        "APP_URL": "https://moodsync-vercel.app",
+        "APP_KEY": "base64:OQAuGBGTJwqZ/gA/kFfjIkxapIQWn5ZTGT+M8DOHDxc=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
