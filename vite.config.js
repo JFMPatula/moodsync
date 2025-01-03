@@ -3,7 +3,6 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    base: './',
     plugins: [
         laravel({
             input: 'resources/js/app.js',
@@ -18,6 +17,10 @@ export default defineConfig({
             },
         }),
     ],
+    build: {
+        outDir: 'public', // Output directly to public directory
+        emptyOutDir: true, // Ensure the folder is cleared before each build
+    },
     server: {
         hmr: {
             host: 'localhost',
