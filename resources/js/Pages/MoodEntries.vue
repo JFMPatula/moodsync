@@ -492,7 +492,7 @@ const generateSuggestions = (entry) => {
 // Fetch mood entries
 const fetchMoodEntries = async () => {
     try {
-        const response = await fetch('/api/mood-entries');
+        const response = await fetch('/mood-entries');
         if (!response.ok) throw new Error('Failed to fetch entries');
         const data = await response.json();
         moodEntries.value = data.map(entry => ({

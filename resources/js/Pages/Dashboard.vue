@@ -308,7 +308,7 @@ const submitForm = async () => {
         previousMoodIntensity.value = moodIntensity.value;
 
         // Send the data using axios to the API endpoint
-        const response = await axios.post('/api/mood-entry', data);
+        const response = await axios.post('/mood-entry', data);
 
         if (response.status === 201) {
             // Show success message
