@@ -39,7 +39,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/mood-analytics', [MoodAnalyticsController::class, 'index'])->name('mood.analytics');
     
     // API Routes
-    Route::prefix('api')->group(function () {
+    // Route::prefix('api')->group(function () {
         // Mood entries
         Route::get('/mood-entries', [MoodEntryController::class, 'index']);
         Route::post('/mood-entry', [MoodEntryController::class, 'store']);
@@ -50,7 +50,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/todos', [TodoController::class, 'store']);
         Route::put('/todos/{todo}', [TodoController::class, 'update']);
         Route::delete('/todos/{todo}', [TodoController::class, 'destroy']);
-    });
+    // });
 });
 
 // Include Auth Routes
