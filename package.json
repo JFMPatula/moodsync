@@ -20,7 +20,6 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
-        "@supabase/supabase-js": "^2.47.10",
-        "ziggy-js": "github:tightenco/ziggy"
+        "@supabase/supabase-js": "^2.47.10"
     }
 }

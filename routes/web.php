@@ -21,7 +21,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard', [
-            'user' => auth()->user(),
+            'user' => \Illuminate\Support\Facades\Auth::user(),
         ]);
     })->name('dashboard');
 
