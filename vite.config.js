@@ -3,11 +3,11 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    base: '/build/', // Ensure assets are served from the /build/ folder
+    base: '/',
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'], // Main input files
-            refresh: true, // Enable automatic browser refresh
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
         }),
         vue({
             template: {
@@ -20,19 +20,11 @@ export default defineConfig({
     ],
     server: {
         hmr: {
-            host: 'moodsync-eosin.vercel.app', // Host for Vite HMR
-            protocol: 'wss', // WebSocket Secure protocol for HMR
+            host: 'moodsync-eosin.vercel.app',
+            protocol: 'wss',
         },
         watch: {
-            usePolling: true, // Fix for file system watchers on some systems
-        },
-    },
-    build: {
-        outDir: 'public/build', // Ensure the build output is in the correct folder
-        assetsDir: '', // Keep all assets flat in the /build/ folder
-        manifest: true, // Generate a manifest for Laravel's asset helper
-        rollupOptions: {
-            input: ['resources/css/app.css', 'resources/js/app.js'], // Entry points
+            usePolling: true,
         },
     },
 });
