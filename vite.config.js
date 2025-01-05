@@ -20,7 +20,8 @@ export default defineConfig({
     ],
     server: {
         hmr: {
-            host: 'localhost',
+            host: 'moodsync-eosin.vercel.app',
+            protocol: 'wss',
         },
         watch: {
             usePolling: true,
