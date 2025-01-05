@@ -4,12 +4,10 @@
     "api/index.php": { "runtime": "vercel-php@0.6.0" }
   },
   "routes": [
-    // Ensure assets from /build/ are served directly from public/build/
     {
       "src": "/build/(.*)",
       "dest": "/public/build/$1"
     },
-    // Catch-all route for API requests
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
