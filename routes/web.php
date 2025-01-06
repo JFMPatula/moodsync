@@ -41,7 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // API Routes
     // Route::prefix('api')->group(function () {
         // Mood entries
-        Route::get('/api/mood-entries', [MoodEntryController::class, 'index']);
+        Route::get('/moodEntries', [MoodEntryController::class, 'index']);
         Route::post('/mood-entry', [MoodEntryController::class, 'store']);
         Route::get('/mood-analytics', [MoodAnalyticsController::class, 'getAnalytics']);
         
