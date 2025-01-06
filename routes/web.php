@@ -41,15 +41,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // API Routes
     // Route::prefix('api')->group(function () {
         // Mood entries
-        // Route::get('/mood-entries', [MoodEntryController::class, 'index']);
-        Route::post('/mood-entry', [MoodEntryController::class, 'store']);
+        Route::get('/api/mood-entries', [MoodEntryController::class, 'index']);
+        Route::post('/api/mood-entry', [MoodEntryController::class, 'store']);
         Route::get('/mood-analytics', [MoodAnalyticsController::class, 'getAnalytics']);
         
         // Todo routes
-        Route::get('/todos', [TodoController::class, 'index']);
-        Route::post('/todos', [TodoController::class, 'store']);
-        Route::put('/todos/{todo}', [TodoController::class, 'update']);
-        Route::delete('/todos/{todo}', [TodoController::class, 'destroy']);
+        Route::get('/api/todos', [TodoController::class, 'index']);
+        Route::post('/api/todos', [TodoController::class, 'store']);
+        Route::put('/api/todos/{todo}', [TodoController::class, 'update']);
+        Route::delete('/api/todos/{todo}', [TodoController::class, 'destroy']);
     // });
 });
 
