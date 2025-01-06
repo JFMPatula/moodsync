@@ -226,7 +226,7 @@ const sortedTodos = computed(() => {
 
 const fetchTodos = async () => {
     try {
-        const response = await axios.get('/api/todos');
+        const response = await axios.get('/todos');
         if (response.data) {
             todos.value = response.data.map(todo => ({
                 ...todo,
@@ -259,7 +259,7 @@ const addTodo = async () => {
     const task = newTodo.value.trim();
     
     try {
-        const response = await axios.post('/api/todos', { task });
+        const response = await axios.post('/todos', { task });
         if (response.data) {
             todos.value.unshift({
                 ...response.data,
@@ -307,7 +307,7 @@ const updateTodo = async (todo) => {
     }
 
     try {
-        const response = await axios.put(`/api/todos/${todo.id}`, { task: todo.editedTask });
+        const response = await axios.put(`/todos/${todo.id}`, { task: todo.editedTask });
         if (response.data) {
             todo.task = todo.editedTask;
         }
@@ -321,7 +321,7 @@ const updateTodo = async (todo) => {
 
 const toggleTodo = async (todo) => {
     try {
-        const response = await axios.put(`/api/todos/${todo.id}`, { completed: !todo.completed });
+        const response = await axios.put(`/todos/${todo.id}`, { completed: !todo.completed });
         if (response.data) {
             todo.completed = !todo.completed;
         }
@@ -339,7 +339,7 @@ const deleteConfirmed = async () => {
     if (!todoToDelete.value) return;
     
     try {
-        await axios.delete(`/api/todos/${todoToDelete.value.id}`);
+        await axios.delete(`/todos/${todoToDelete.value.id}`);
         todos.value = todos.value.filter(todo => todo.id !== todoToDelete.value.id);
         showDeleteConfirm.value = false;
         todoToDelete.value = null;
